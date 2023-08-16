@@ -17,6 +17,12 @@ pipeline {
                         echo "Deploying in Staging Area"
                         sh 'mvn clean package'
                   }
+                  post {
+                        success {
+                            echo "Now Archiving the artifacts..."
+                            archiveArtifacts artifacts: '**/*.jar'
+                        }
+                  }
             }
             stage('Deploy Production') {
                   steps {
