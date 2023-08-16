@@ -3,7 +3,7 @@ pipeline {
       stages {
             stage('Init') {
                   steps {
-                        echo 'Hi, this is Anshul from LevelUp360'
+                        echo 'Hi, this is Nikhil !!!'
                         echo 'We are Starting the Testing'
                   }
             }
@@ -15,6 +15,7 @@ pipeline {
             stage('Deploy') {
                   steps {
                         echo "Deploying in Staging Area"
+                        sh 'mvn clean package'
                   }
             }
             stage('Deploy Production') {
